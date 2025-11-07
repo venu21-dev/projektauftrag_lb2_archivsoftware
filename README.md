@@ -1,4 +1,4 @@
-# 📁 Archivsoftware - Dokumentenverwaltung für PDF & DOCX
+# 📁 Archivsoftware - Dokumentenverwaltung
 
 > Desktop-Anwendung zur automatischen Ablage, Verwaltung und Suche von Dokumenten in einer SQL-Server-Datenbank
 
@@ -6,9 +6,8 @@
 
 ## 📋 Projektübersicht
 
-**Projektname:** Archivsoftware für PDF- und Word-Dokumente  
+**Projektname:** Archivsoftware
 **Team:** Jegatheeswaran Mathumithan & Manivannan Venurshan  
-**Zeitraum:** 06.11.2024 - 30.11.2024  
 **Kurs:** PROG1 - LB2  
 **Technologie:** C# WPF, Entity Framework Core, SQL Server
 
