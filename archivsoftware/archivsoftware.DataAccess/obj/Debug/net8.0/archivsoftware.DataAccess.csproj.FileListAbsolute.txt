@@ -1,0 +1,13 @@
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\bin\Debug\net8.0\archivsoftware.DataAccess.deps.json
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\bin\Debug\net8.0\archivsoftware.DataAccess.dll
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\bin\Debug\net8.0\archivsoftware.DataAccess.pdb
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\obj\Debug\net8.0\archivsoftware.DataAccess.csproj.AssemblyReference.cache
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\obj\Debug\net8.0\archivsoftware.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\obj\Debug\net8.0\archivsoftware.DataAccess.AssemblyInfoInputs.cache
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\obj\Debug\net8.0\archivsoftware.DataAccess.AssemblyInfo.cs
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\obj\Debug\net8.0\archivsoftware.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\obj\Debug\net8.0\archivsoftware.DataAccess.sourcelink.json
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\obj\Debug\net8.0\archivsoftware.DataAccess.dll
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\obj\Debug\net8.0\refint\archivsoftware.DataAccess.dll
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\obj\Debug\net8.0\archivsoftware.DataAccess.pdb
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.DataAccess\obj\Debug\net8.0\ref\archivsoftware.DataAccess.dll

@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using archivsoftware.DataAccess;
 
 namespace archivsoftware
 {
@@ -19,6 +20,9 @@ namespace archivsoftware
         public MainWindow()
         {
             InitializeComponent();
+
+            // Connection Test beim Start
+            ConnectionTest.TestConnection(); // ← Diese Zeile hinzufügen
         }
     }
 }

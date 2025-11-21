@@ -1,0 +1,16 @@
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\bin\Debug\net8.0\archivsoftware.Business.deps.json
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\bin\Debug\net8.0\archivsoftware.Business.dll
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\bin\Debug\net8.0\archivsoftware.Business.pdb
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\bin\Debug\net8.0\archivsoftware.DataAccess.dll
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\bin\Debug\net8.0\archivsoftware.DataAccess.pdb
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\archivsoftware.Business.csproj.AssemblyReference.cache
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\archivsoftware.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\archivsoftware.Business.AssemblyInfoInputs.cache
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\archivsoftware.Business.AssemblyInfo.cs
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\archivsoftware.Business.csproj.CoreCompileInputs.cache
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\archivsoftware.Business.sourcelink.json
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\archivso.2ECD279F.Up2Date
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\archivsoftware.Business.dll
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\refint\archivsoftware.Business.dll
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\archivsoftware.Business.pdb
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\obj\Debug\net8.0\ref\archivsoftware.Business.dll
