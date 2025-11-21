@@ -5,8 +5,267 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:archivsoftware"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Archivsoftware" Height="700" Width="1400"
+        Background="#1E1E1E">
 
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <!-- Top Bar: Suche + Buttons -->
+            <RowDefinition Height="60"/>
+            <!-- Main Content Area -->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ========== TOP BAR ========== -->
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Suchfeld -->
+            <Border Grid.Column="0" 
+                    Background="#2D2D30" 
+                    BorderBrush="#3F3F46" 
+                    BorderThickness="1" 
+                    CornerRadius="6"
+                    Padding="12">
+                <TextBox x:Name="SearchBox"
+                         Background="Transparent"
+                         Foreground="#E0E0E0"
+                         BorderThickness="0"
+                         FontSize="14"
+                         VerticalContentAlignment="Center"
+                         Text="Suche"/>
+            </Border>
+
+            <!-- Button: Neuer Ordner -->
+            <Button Grid.Column="1" 
+                    x:Name="BtnNewFolder"
+                    Content="+ Neuer Ordner"
+                    Background="#2D2D30"
+                    Foreground="#E0E0E0"
+                    BorderBrush="#3F3F46"
+                    BorderThickness="1"
+                    Padding="15,8"
+                    Margin="10,0,0,0"
+                    FontSize="13"
+                    Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="6"
+                                            Padding="{TemplateBinding Padding}">
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                        VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#3E3E42"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <!-- Button: Importieren -->
+            <Button Grid.Column="2" 
+                    x:Name="BtnImport"
+                    Content="⬇ Importieren"
+                    Background="#2D2D30"
+                    Foreground="#E0E0E0"
+                    BorderBrush="#3F3F46"
+                    BorderThickness="1"
+                    Padding="15,8"
+                    Margin="10,0,0,0"
+                    FontSize="13"
+                    Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="6"
+                                            Padding="{TemplateBinding Padding}">
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                        VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#3E3E42"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+
+        <!-- ========== MAIN CONTENT: 3 SPALTEN ========== -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <!-- Links: Ordnerstruktur -->
+                <ColumnDefinition Width="320"/>
+                <!-- Mitte: Suchergebnisse -->
+                <ColumnDefinition Width="*"/>
+                <!-- Rechts: Dateivorschau -->
+                <ColumnDefinition Width="450"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ========== SPALTE 1: ORDNERSTRUKTUR ========== -->
+            <Border Grid.Column="0" 
+                    Background="#252526" 
+                    BorderBrush="#3F3F46" 
+                    BorderThickness="1" 
+                    CornerRadius="8"
+                    Margin="0,0,5,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Header -->
+                    <TextBlock Grid.Row="0"
+                               Text="ORDNERSTRUKTUR"
+                               Foreground="#A0A0A0"
+                               FontSize="12"
+                               FontWeight="SemiBold"
+                               Margin="15,15,15,10"/>
+
+                    <!-- TreeView: Ordner (leer) -->
+                    <ScrollViewer Grid.Row="1" 
+                                  VerticalScrollBarVisibility="Auto"
+                                  Margin="10,0,10,10">
+                        <TreeView x:Name="FolderTreeView"
+                                  Background="Transparent"
+                                  BorderThickness="0"
+                                  Foreground="#E0E0E0">
+                            <!-- Wird später dynamisch gefüllt -->
+                        </TreeView>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <!-- ========== SPALTE 2: SUCHERGEBNISSE ========== -->
+            <Border Grid.Column="1" 
+                    Background="#252526" 
+                    BorderBrush="#3F3F46" 
+                    BorderThickness="1" 
+                    CornerRadius="8"
+                    Margin="5,0,5,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Header mit Treffer-Badge -->
+                    <Grid Grid.Row="0" Margin="15,15,15,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                                   Text="Suchergebnisse"
+                                   Foreground="#A0A0A0"
+                                   FontSize="12"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center"/>
+
+                        <!-- Badge: Treffer-Anzahl -->
+                        <Border Grid.Column="1"
+                                Background="#3F3F46"
+                                CornerRadius="12"
+                                Padding="10,4">
+                            <TextBlock x:Name="ResultCountText"
+                                       Text="0 Treffer"
+                                       Foreground="#E0E0E0"
+                                       FontSize="11"
+                                       FontWeight="Medium"/>
+                        </Border>
+                    </Grid>
+
+                    <!-- ListView: Dokumente (leer) -->
+                    <ScrollViewer Grid.Row="1" 
+                                  VerticalScrollBarVisibility="Auto"
+                                  Margin="10,0,10,10">
+                        <StackPanel x:Name="ResultsPanel">
+                            <!-- Wird später dynamisch gefüllt -->
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <!-- ========== SPALTE 3: DATEIVORSCHAU ========== -->
+            <Border Grid.Column="2" 
+                    Background="#252526" 
+                    BorderBrush="#3F3F46" 
+                    BorderThickness="1" 
+                    CornerRadius="8"
+                    Margin="5,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Header -->
+                    <TextBlock Grid.Row="0"
+                               Text="Dateivorschau"
+                               Foreground="#A0A0A0"
+                               FontSize="12"
+                               FontWeight="SemiBold"
+                               Margin="15,15,15,10"/>
+
+                    <!-- Datei-Metadaten (leer) -->
+                    <Border Grid.Row="1" 
+                            Background="#2D2D30" 
+                            CornerRadius="6" 
+                            Padding="15" 
+                            Margin="15,0,15,15">
+                        <StackPanel x:Name="MetadataPanel">
+                            <!-- Wird später dynamisch gefüllt -->
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Text-Vorschau (leer) -->
+                    <ScrollViewer Grid.Row="2" 
+                                  VerticalScrollBarVisibility="Auto"
+                                  Margin="15,0,15,15">
+                        <Border Background="#2D2D30" 
+                                BorderBrush="#3F3F46" 
+                                BorderThickness="1" 
+                                CornerRadius="6" 
+                                Padding="20">
+                            <TextBlock x:Name="PreviewText"
+                                       TextWrapping="Wrap"
+                                       Foreground="#E0E0E0"
+                                       FontSize="13"
+                                       LineHeight="22"
+                                       Text="">
+                                <!-- Wird später dynamisch gefüllt -->
+                            </TextBlock>
+                        </Border>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </Window>
