@@ -6,130 +6,231 @@
         xmlns:local="clr-namespace:archivsoftware"
         mc:Ignorable="d"
         Title="Archivsoftware" Height="700" Width="1400"
-        Background="#1E1E1E">
+        Background="#1A1A1A">
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <!-- Top Bar: Suche + Buttons -->
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
             <!-- Main Content Area -->
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- ========== TEST-BUTTON (temporär, oben links) ========== -->
+        <Button x:Name="TestPdfButton"
+                Content="🧪 PDF Test"
+                Height="42"
+                Width="120"
+                Background="#0D6EFD"
+                Foreground="#FFFFFF"
+                BorderBrush="#0D6EFD"
+                BorderThickness="1"
+                Click="TestPdfButton_Click"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="10,10,0,0"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Panel.ZIndex="999">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="6">
+                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                    VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#0B5ED7"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <!-- ========== TEST-BUTTON DOCX (temporär, oben links neben PDF) ========== -->
+        <Button x:Name="TestDocxButton"
+        Content="📄 DOCX Test"
+        Height="42"
+        Width="130"
+        Background="#28A745"
+        Foreground="#FFFFFF"
+        BorderBrush="#28A745"
+        BorderThickness="1"
+        Click="TestDocxButton_Click"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Margin="140,10,0,0"
+        Grid.Row="0"
+        Grid.RowSpan="2"
+        Panel.ZIndex="999">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                                    <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#218838"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
         <!-- ========== TOP BAR ========== -->
         <Grid Grid.Row="0" Margin="0,0,0,10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Suchfeld -->
-            <Border Grid.Column="0" 
-                    Background="#2D2D30" 
-                    BorderBrush="#3F3F46" 
-                    BorderThickness="1" 
-                    CornerRadius="6"
-                    Padding="12">
-                <TextBox x:Name="SearchBox"
-                         Background="Transparent"
-                         Foreground="#E0E0E0"
-                         BorderThickness="0"
-                         FontSize="14"
-                         VerticalContentAlignment="Center"
-                         Text="Suche"/>
+            <!-- Leer links für Spacing -->
+            <Border Grid.Column="0" Width="200"/>
+
+            <!-- Suchfeld - ZENTRIERT & ETWAS SCHMALER -->
+            <Border Grid.Column="1" 
+        Background="#0D0D0D" 
+        BorderBrush="#404040" 
+        BorderThickness="1" 
+        CornerRadius="6"
+        Height="42"
+        Padding="15,0"
+        MinWidth="400"
+        Margin="84,0,162,0">
+                <Grid>
+                    <TextBlock x:Name="SearchPlaceholder"
+                   Text="Suche"
+                   Foreground="#606060"
+                   FontSize="14"
+                   VerticalAlignment="Center"
+                   IsHitTestVisible="False"
+                   Visibility="Visible"/>
+                    <TextBox x:Name="SearchBox"
+                 Background="Transparent"
+                 Foreground="#E0E0E0"
+                 BorderThickness="0"
+                 FontSize="14"
+                 VerticalContentAlignment="Center"
+                 TextChanged="SearchBox_TextChanged"/>
+                </Grid>
             </Border>
 
-            <!-- Button: Neuer Ordner -->
-            <Button Grid.Column="1" 
-                    x:Name="BtnNewFolder"
-                    Content="+ Neuer Ordner"
-                    Background="#2D2D30"
-                    Foreground="#E0E0E0"
-                    BorderBrush="#3F3F46"
-                    BorderThickness="1"
-                    Padding="15,8"
-                    Margin="10,0,0,0"
-                    FontSize="13"
-                    Cursor="Hand">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="{TemplateBinding Background}"
-                                            BorderBrush="{TemplateBinding BorderBrush}"
-                                            BorderThickness="{TemplateBinding BorderThickness}"
-                                            CornerRadius="6"
-                                            Padding="{TemplateBinding Padding}">
-                                        <ContentPresenter HorizontalAlignment="Center" 
-                                                        VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#3E3E42"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
+            <!-- Buttons rechts -->
+            <StackPanel Grid.Column="2" 
+                        Orientation="Horizontal">
 
-            <!-- Button: Importieren -->
-            <Button Grid.Column="2" 
-                    x:Name="BtnImport"
-                    Content="⬇ Importieren"
-                    Background="#2D2D30"
-                    Foreground="#E0E0E0"
-                    BorderBrush="#3F3F46"
-                    BorderThickness="1"
-                    Padding="15,8"
-                    Margin="10,0,0,0"
-                    FontSize="13"
-                    Cursor="Hand">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Background="{TemplateBinding Background}"
-                                            BorderBrush="{TemplateBinding BorderBrush}"
-                                            BorderThickness="{TemplateBinding BorderThickness}"
-                                            CornerRadius="6"
-                                            Padding="{TemplateBinding Padding}">
-                                        <ContentPresenter HorizontalAlignment="Center" 
-                                                        VerticalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#3E3E42"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
+                <!-- Button: Neuer Ordner -->
+                <Button x:Name="BtnNewFolder"
+                        Content="+ Neuer Ordner"
+                        Click="BtnNewFolder_Click"
+                        Height="42"
+                        Background="#0D0D0D"
+                        Foreground="#E0E0E0"
+                        BorderBrush="#404040"
+                        BorderThickness="1"
+                        Padding="20,0"
+                        Margin="0,0,10,0"
+                        FontSize="13"
+                        Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="6"
+                                                Padding="{TemplateBinding Padding}">
+                                            <ContentPresenter HorizontalAlignment="Center" 
+                                                            VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#1A1A1A"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <!-- Button: Importieren -->
+                <Button x:Name="BtnImport"
+                        Content="⬇ Importieren"
+                        Click="BtnImport_Click"
+                        Height="42"
+                        Background="#0D0D0D"
+                        Foreground="#E0E0E0"
+                        BorderBrush="#404040"
+                        BorderThickness="1"
+                        Padding="20,0"
+                        FontSize="13"
+                        Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="6"
+                                                Padding="{TemplateBinding Padding}">
+                                            <ContentPresenter HorizontalAlignment="Center" 
+                                                            VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#1A1A1A"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
         </Grid>
 
         <!-- ========== MAIN CONTENT: 3 SPALTEN ========== -->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <!-- Links: Ordnerstruktur -->
-                <ColumnDefinition Width="320"/>
+                <ColumnDefinition Width="280"/>
                 <!-- Mitte: Suchergebnisse -->
                 <ColumnDefinition Width="*"/>
                 <!-- Rechts: Dateivorschau -->
-                <ColumnDefinition Width="450"/>
+                <ColumnDefinition Width="420"/>
             </Grid.ColumnDefinitions>
 
             <!-- ========== SPALTE 1: ORDNERSTRUKTUR ========== -->
             <Border Grid.Column="0" 
-                    Background="#252526" 
-                    BorderBrush="#3F3F46" 
+                    Background="#0D0D0D" 
+                    BorderBrush="#404040" 
                     BorderThickness="1" 
                     CornerRadius="8"
                     Margin="0,0,5,0">
@@ -141,21 +242,196 @@
 
                     <!-- Header -->
                     <TextBlock Grid.Row="0"
-                               Text="ORDNERSTRUKTUR"
-                               Foreground="#A0A0A0"
+                               Text="Ordnerstruktur"
+                               Foreground="#909090"
                                FontSize="12"
-                               FontWeight="SemiBold"
-                               Margin="15,15,15,10"/>
+                               FontWeight="Normal"
+                               Margin="18,15,15,15"/>
 
-                    <!-- TreeView: Ordner (leer) -->
+                    <!-- TreeView mit Card-Design und Hierarchie -->
                     <ScrollViewer Grid.Row="1" 
                                   VerticalScrollBarVisibility="Auto"
-                                  Margin="10,0,10,10">
+                                  Margin="15,0,15,10">
                         <TreeView x:Name="FolderTreeView"
-                                  Background="Transparent"
-                                  BorderThickness="0"
-                                  Foreground="#E0E0E0">
-                            <!-- Wird später dynamisch gefüllt -->
+          Background="Transparent"
+          BorderThickness="0"
+          MouseRightButtonDown="FolderTreeView_MouseRightButtonDown"
+          SelectedItemChanged="FolderTreeView_SelectedItemChanged">
+
+
+                            <!-- ContextMenu für Rechtsklick -->
+                            <TreeView.Resources>
+                                <ContextMenu x:Key="FolderContextMenu">
+                                    <MenuItem Header="Neuer Unterordner" 
+                  Click="MenuItemNewSubFolder_Click">
+                                        <MenuItem.Icon>
+                                            <TextBlock Text="📁+" FontSize="14"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <Separator/>
+                                    <MenuItem Header="Umbenennen" 
+                  Click="MenuItemRename_Click">
+                                        <MenuItem.Icon>
+                                            <TextBlock Text="✏️" FontSize="14"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem Header="Verschieben nach..." 
+                  Click="MenuItemMove_Click">
+                                        <MenuItem.Icon>
+                                            <TextBlock Text="📁" FontSize="14"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <Separator/>
+                                    <MenuItem Header="Löschen" 
+                  Click="MenuItemDelete_Click">
+                                        <MenuItem.Icon>
+                                            <TextBlock Text="🗑️" FontSize="14"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </TreeView.Resources>
+
+                            <!-- Style für TreeViewItem (einzelne Ordner) -->
+                            <TreeView.ItemContainerStyle>
+                                <Style TargetType="TreeViewItem">
+                                    <Setter Property="IsExpanded" Value="True"/>
+                                    <Setter Property="Padding" Value="0"/>
+                                    <Setter Property="Margin" Value="0,0,0,8"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="TreeViewItem">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!-- Card für den Ordner -->
+                                                    <Border x:Name="ItemBorder"
+                                    Grid.Row="0"
+                                    Background="#1A1A1A"
+                                    BorderBrush="#2A2A2A"
+                                    BorderThickness="1"
+                                    CornerRadius="8"
+                                    Padding="16,14"
+                                    Cursor="Hand">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <!-- Expand/Collapse Button (nur wenn Unterordner vorhanden) -->
+                                                            <ToggleButton x:Name="Expander"
+                                                 Grid.Column="0"
+                                                 Width="20"
+                                                 Height="20"
+                                                 Margin="0,0,8,0"
+                                                 IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                                                 ClickMode="Press"
+                                                 Background="Transparent"
+                                                 BorderThickness="0">
+                                                                <ToggleButton.Style>
+                                                                    <Style TargetType="ToggleButton">
+                                                                        <Setter Property="Template">
+                                                                            <Setter.Value>
+                                                                                <ControlTemplate TargetType="ToggleButton">
+                                                                                    <Border Background="Transparent">
+                                                                                        <TextBlock x:Name="ExpanderIcon"
+                                                                          Text="▶"
+                                                                          FontSize="10"
+                                                                          Foreground="#808080"
+                                                                          HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center"
+                                                                          RenderTransformOrigin="0.5,0.5">
+                                                                                            <TextBlock.RenderTransform>
+                                                                                                <RotateTransform Angle="0"/>
+                                                                                            </TextBlock.RenderTransform>
+                                                                                        </TextBlock>
+                                                                                    </Border>
+                                                                                    <ControlTemplate.Triggers>
+                                                                                        <Trigger Property="IsChecked" Value="True">
+                                                                                            <Setter TargetName="ExpanderIcon" Property="RenderTransform">
+                                                                                                <Setter.Value>
+                                                                                                    <RotateTransform Angle="90"/>
+                                                                                                </Setter.Value>
+                                                                                            </Setter>
+                                                                                        </Trigger>
+                                                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                                                            <Setter TargetName="ExpanderIcon" Property="Foreground" Value="#B0B0B0"/>
+                                                                                        </Trigger>
+                                                                                    </ControlTemplate.Triggers>
+                                                                                </ControlTemplate>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </Style>
+                                                                </ToggleButton.Style>
+                                                            </ToggleButton>
+
+                                                            <!-- Ordner Icon (SVG Path) -->
+                                                            <Viewbox Grid.Column="1"
+                                            Width="20"
+                                            Height="20"
+                                            VerticalAlignment="Center"
+                                            Margin="0,0,12,0">
+                                                                <Path Data="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"
+                                              Fill="#FFA500"
+                                              Stretch="Uniform"/>
+                                                            </Viewbox>
+
+                                                            <!-- Ordner Name -->
+                                                            <TextBlock Grid.Column="2"
+                                              Text="{Binding DisplayName}"
+                                              Foreground="#E8E8E8"
+                                              FontSize="14"
+                                              FontWeight="Normal"
+                                              VerticalAlignment="Center"/>
+                                                        </Grid>
+                                                    </Border>
+
+                                                    <!-- Container für Unterordner (eingerückt) -->
+                                                    <ItemsPresenter x:Name="ItemsHost"
+                                           Grid.Row="1"
+                                           Margin="28,8,0,0"
+                                           Visibility="Collapsed"/>
+                                                </Grid>
+
+                                                <ControlTemplate.Triggers>
+                                                    <!-- Hover Effect -->
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="ItemBorder" Property="Background" Value="#242424"/>
+                                                        <Setter TargetName="ItemBorder" Property="BorderBrush" Value="#3A3A3A"/>
+                                                    </Trigger>
+
+                                                    <!-- Selected State -->
+                                                    <Trigger Property="IsSelected" Value="True">
+                                                        <Setter TargetName="ItemBorder" Property="Background" Value="#2A4A6A"/>
+                                                        <Setter TargetName="ItemBorder" Property="BorderBrush" Value="#4A6A8A"/>
+                                                    </Trigger>
+
+                                                    <!-- Zeige Unterordner wenn expanded -->
+                                                    <Trigger Property="IsExpanded" Value="True">
+                                                        <Setter TargetName="ItemsHost" Property="Visibility" Value="Visible"/>
+                                                    </Trigger>
+
+                                                    <!-- Verstecke Expander wenn keine Unterordner -->
+                                                    <Trigger Property="HasItems" Value="False">
+                                                        <Setter TargetName="Expander" Property="Visibility" Value="Hidden"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </TreeView.ItemContainerStyle>
+
+                            <!-- Hierarchical DataTemplate für Ordner -->
+                            <TreeView.ItemTemplate>
+                                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                                    <!-- Das Template ist leer, weil alles im ItemContainerStyle definiert ist -->
+                                </HierarchicalDataTemplate>
+                            </TreeView.ItemTemplate>
                         </TreeView>
                     </ScrollViewer>
                 </Grid>
@@ -163,8 +439,8 @@
 
             <!-- ========== SPALTE 2: SUCHERGEBNISSE ========== -->
             <Border Grid.Column="1" 
-                    Background="#252526" 
-                    BorderBrush="#3F3F46" 
+                    Background="#0D0D0D" 
+                    BorderBrush="#404040" 
                     BorderThickness="1" 
                     CornerRadius="8"
                     Margin="5,0,5,0">
@@ -175,33 +451,37 @@
                     </Grid.RowDefinitions>
 
                     <!-- Header mit Treffer-Badge -->
-                    <Grid Grid.Row="0" Margin="15,15,15,10">
+                    <Grid Grid.Row="0" Margin="18,15,18,15">
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Grid.Column="0"
                                    Text="Suchergebnisse"
-                                   Foreground="#A0A0A0"
-                                   FontSize="12"
-                                   FontWeight="SemiBold"
+                                   Foreground="#808080"
+                                   FontSize="11"
+                                   FontWeight="Normal"
                                    VerticalAlignment="Center"/>
 
                         <!-- Badge: Treffer-Anzahl -->
-                        <Border Grid.Column="1"
-                                Background="#3F3F46"
+                        <Border Grid.Column="2"
+                                Background="#1A1A1A"
+                                BorderBrush="#404040"
+                                BorderThickness="1"
                                 CornerRadius="12"
-                                Padding="10,4">
+                                Padding="12,5"
+                                VerticalAlignment="Center">
                             <TextBlock x:Name="ResultCountText"
                                        Text="0 Treffer"
-                                       Foreground="#E0E0E0"
-                                       FontSize="11"
-                                       FontWeight="Medium"/>
+                                       Foreground="#A0A0A0"
+                                       FontSize="10"
+                                       FontWeight="Normal"/>
                         </Border>
                     </Grid>
 
-                    <!-- ListView: Dokumente (leer) -->
+                    <!-- ListView: Dokumente -->
                     <ScrollViewer Grid.Row="1" 
                                   VerticalScrollBarVisibility="Auto"
                                   Margin="10,0,10,10">
@@ -214,8 +494,8 @@
 
             <!-- ========== SPALTE 3: DATEIVORSCHAU ========== -->
             <Border Grid.Column="2" 
-                    Background="#252526" 
-                    BorderBrush="#3F3F46" 
+                    Background="#0D0D0D" 
+                    BorderBrush="#404040" 
                     BorderThickness="1" 
                     CornerRadius="8"
                     Margin="5,0,0,0">
@@ -229,14 +509,16 @@
                     <!-- Header -->
                     <TextBlock Grid.Row="0"
                                Text="Dateivorschau"
-                               Foreground="#A0A0A0"
-                               FontSize="12"
-                               FontWeight="SemiBold"
-                               Margin="15,15,15,10"/>
+                               Foreground="#808080"
+                               FontSize="11"
+                               FontWeight="Normal"
+                               Margin="18,15,15,15"/>
 
-                    <!-- Datei-Metadaten (leer) -->
+                    <!-- Datei-Metadaten -->
                     <Border Grid.Row="1" 
-                            Background="#2D2D30" 
+                            Background="#1A1A1A" 
+                            BorderBrush="#404040"
+                            BorderThickness="1"
                             CornerRadius="6" 
                             Padding="15" 
                             Margin="15,0,15,15">
@@ -245,18 +527,18 @@
                         </StackPanel>
                     </Border>
 
-                    <!-- Text-Vorschau (leer) -->
+                    <!-- Text-Vorschau -->
                     <ScrollViewer Grid.Row="2" 
                                   VerticalScrollBarVisibility="Auto"
                                   Margin="15,0,15,15">
-                        <Border Background="#2D2D30" 
-                                BorderBrush="#3F3F46" 
+                        <Border Background="#1A1A1A" 
+                                BorderBrush="#404040" 
                                 BorderThickness="1" 
                                 CornerRadius="6" 
-                                Padding="20">
+                                Padding="18">
                             <TextBlock x:Name="PreviewText"
                                        TextWrapping="Wrap"
-                                       Foreground="#E0E0E0"
+                                       Foreground="#D0D0D0"
                                        FontSize="13"
                                        LineHeight="22"
                                        Text="">

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>archivsoftware.Business</id>
+    <version>1.0.0</version>
+    <authors>archivsoftware.Business</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="ec26171e2c3bfdfa1db6d01574728ad24a5f6cf3" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="archivsoftware.DataAccess" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="itext7" version="9.4.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware.Business\bin\Debug\net8.0\archivsoftware.Business.dll" target="lib\net8.0\archivsoftware.Business.dll" />
+  </files>
+</package>

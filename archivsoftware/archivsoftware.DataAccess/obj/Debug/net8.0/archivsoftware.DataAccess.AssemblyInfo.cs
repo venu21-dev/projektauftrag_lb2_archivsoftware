@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("archivsoftware.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9b2cc1a75e0c20a6029f770e1041a63f7590a5f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec26171e2c3bfdfa1db6d01574728ad24a5f6cf3")]
 [assembly: System.Reflection.AssemblyProductAttribute("archivsoftware.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("archivsoftware.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

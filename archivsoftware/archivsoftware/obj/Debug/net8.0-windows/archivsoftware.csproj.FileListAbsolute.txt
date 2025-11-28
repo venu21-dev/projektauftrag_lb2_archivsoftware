@@ -163,3 +163,9 @@ C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\p
 C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\bin\Debug\net8.0-windows\archivsoftware.DataAccess.pdb
 C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\archivsoftware.csproj.AssemblyReference.cache
 C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\archivso.646FCBCF.Up2Date
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\CreateFolderDialog.baml
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\CreateFolderDialog.g.cs
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\RenameFolderDialog.baml
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\RenameFolderDialog.g.cs
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\MoveFolderDialog.baml
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\MoveFolderDialog.g.cs

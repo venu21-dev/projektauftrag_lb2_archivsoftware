@@ -3,12 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7F86BF2-20FD-47E0-9069-27BEDBF567F9}|archivsoftware.Business\\archivsoftware.Business.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.business\\archivsoftware.business.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D7F86BF2-20FD-47E0-9069-27BEDBF567F9}|archivsoftware.Business\\archivsoftware.Business.csproj|solutionrelative:archivsoftware.business\\archivsoftware.business.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\renamefolderdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\renamefolderdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7F86BF2-20FD-47E0-9069-27BEDBF567F9}|archivsoftware.Business\\archivsoftware.Business.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.business\\services\\docxtextextractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F86BF2-20FD-47E0-9069-27BEDBF567F9}|archivsoftware.Business\\archivsoftware.Business.csproj|solutionrelative:archivsoftware.business\\services\\docxtextextractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7F86BF2-20FD-47E0-9069-27BEDBF567F9}|archivsoftware.Business\\archivsoftware.Business.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.business\\services\\pdftextextractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F86BF2-20FD-47E0-9069-27BEDBF567F9}|archivsoftware.Business\\archivsoftware.Business.csproj|solutionrelative:archivsoftware.business\\services\\pdftextextractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\archivsoftware.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\archivsoftware.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\movefolderdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\movefolderdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\movefolderdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\movefolderdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\renamefolderdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\renamefolderdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\createfolderdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\createfolderdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CC8C8EBE-E320-43CE-A5CE-35B5B1125887}|archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.dataaccess\\archivecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CC8C8EBE-E320-43CE-A5CE-35B5B1125887}|archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj|solutionrelative:archivsoftware.dataaccess\\archivecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC8C8EBE-E320-43CE-A5CE-35B5B1125887}|archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.dataaccess\\archivsoftware.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{CC8C8EBE-E320-43CE-A5CE-35B5B1125887}|archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj|solutionrelative:archivsoftware.dataaccess\\archivsoftware.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{CC8C8EBE-E320-43CE-A5CE-35B5B1125887}|archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.dataaccess\\repositories\\folderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC8C8EBE-E320-43CE-A5CE-35B5B1125887}|archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj|solutionrelative:archivsoftware.dataaccess\\repositories\\folderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CC8C8EBE-E320-43CE-A5CE-35B5B1125887}|archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.dataaccess\\document.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,16 +67,12 @@
       "RelativeMoniker": "D:0:0:{CC8C8EBE-E320-43CE-A5CE-35B5B1125887}|archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj|solutionrelative:archivsoftware.dataaccess\\connectiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CCEBD9F4-C4F8-49BB-8BFC-B1780E8EFB65}|archivsoftware\\archivsoftware.csproj|solutionrelative:archivsoftware\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{CC8C8EBE-E320-43CE-A5CE-35B5B1125887}|archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj|c:\\users\\venu\\onedrive - gibb berufsfachschule bern\\personal\\hf\\prog1\\projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.dataaccess\\migrations\\20251127161557_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC8C8EBE-E320-43CE-A5CE-35B5B1125887}|archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj|solutionrelative:archivsoftware.dataaccess\\migrations\\20251127161557_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,32 +87,184 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "archivsoftware\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MainWindow.xaml.cs",
+              "RelativeToolTip": "archivsoftware\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAuwLwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T08:03:51.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "archivsoftware",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\archivsoftware.csproj",
+              "RelativeDocumentMoniker": "archivsoftware\\archivsoftware.csproj",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\archivsoftware.csproj",
+              "RelativeToolTip": "archivsoftware\\archivsoftware.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-28T14:44:34.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "archivsoftware\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MainWindow.xaml",
+              "RelativeToolTip": "archivsoftware\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-07T08:03:55.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RenameFolderDialog.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\RenameFolderDialog.xaml.cs",
+              "RelativeDocumentMoniker": "archivsoftware\\RenameFolderDialog.xaml.cs",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\RenameFolderDialog.xaml.cs",
+              "RelativeToolTip": "archivsoftware\\RenameFolderDialog.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwBYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T13:25:07.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "archivsoftware.Business",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.Business\\archivsoftware.Business.csproj",
+              "RelativeDocumentMoniker": "archivsoftware.Business\\archivsoftware.Business.csproj",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.Business\\archivsoftware.Business.csproj",
+              "RelativeToolTip": "archivsoftware.Business\\archivsoftware.Business.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-28T14:42:16.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DocxTextExtractor.cs",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.Business\\Services\\DocxTextExtractor.cs",
+              "RelativeDocumentMoniker": "archivsoftware.Business\\Services\\DocxTextExtractor.cs",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.Business\\Services\\DocxTextExtractor.cs",
+              "RelativeToolTip": "archivsoftware.Business\\Services\\DocxTextExtractor.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAcwA0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T15:10:03.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PdfTextExtractor.cs",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.Business\\Services\\PdfTextExtractor.cs",
+              "RelativeDocumentMoniker": "archivsoftware.Business\\Services\\PdfTextExtractor.cs",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.Business\\Services\\PdfTextExtractor.cs",
+              "RelativeToolTip": "archivsoftware.Business\\Services\\PdfTextExtractor.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T14:48:57.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MoveFolderDialog.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MoveFolderDialog.xaml.cs",
+              "RelativeDocumentMoniker": "archivsoftware\\MoveFolderDialog.xaml.cs",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MoveFolderDialog.xaml.cs",
+              "RelativeToolTip": "archivsoftware\\MoveFolderDialog.xaml.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T13:39:06.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MoveFolderDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MoveFolderDialog.xaml",
+              "RelativeDocumentMoniker": "archivsoftware\\MoveFolderDialog.xaml",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MoveFolderDialog.xaml",
+              "RelativeToolTip": "archivsoftware\\MoveFolderDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-28T13:38:32.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RenameFolderDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\RenameFolderDialog.xaml",
+              "RelativeDocumentMoniker": "archivsoftware\\RenameFolderDialog.xaml",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\RenameFolderDialog.xaml",
+              "RelativeToolTip": "archivsoftware\\RenameFolderDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-28T13:24:19.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CreateFolderDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\CreateFolderDialog.xaml",
+              "RelativeDocumentMoniker": "archivsoftware\\CreateFolderDialog.xaml",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\CreateFolderDialog.xaml",
+              "RelativeToolTip": "archivsoftware\\CreateFolderDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-27T18:56:07.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FolderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\Repositories\\FolderRepository.cs",
+              "RelativeDocumentMoniker": "archivsoftware.DataAccess\\Repositories\\FolderRepository.cs",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\Repositories\\FolderRepository.cs",
+              "RelativeToolTip": "archivsoftware.DataAccess\\Repositories\\FolderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T17:08:25.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ArchiveContext.cs",
               "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\ArchiveContext.cs",
               "RelativeDocumentMoniker": "archivsoftware.DataAccess\\ArchiveContext.cs",
               "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\ArchiveContext.cs",
               "RelativeToolTip": "archivsoftware.DataAccess\\ArchiveContext.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAswBIAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAkwDQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-21T13:50:27.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Document.cs",
-              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\Document.cs",
-              "RelativeDocumentMoniker": "archivsoftware.DataAccess\\Document.cs",
-              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\Document.cs",
-              "RelativeToolTip": "archivsoftware.DataAccess\\Document.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "20251127161557_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\Migrations\\20251127161557_InitialCreate.cs",
+              "RelativeDocumentMoniker": "archivsoftware.DataAccess\\Migrations\\20251127161557_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\Migrations\\20251127161557_InitialCreate.cs",
+              "RelativeToolTip": "archivsoftware.DataAccess\\Migrations\\20251127161557_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T13:16:10.678Z",
+              "WhenOpened": "2025-11-27T16:15:57.697Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "Folder.cs",
               "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\Folder.cs",
               "RelativeDocumentMoniker": "archivsoftware.DataAccess\\Folder.cs",
@@ -85,7 +277,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
+              "Title": "Document.cs",
+              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\Document.cs",
+              "RelativeDocumentMoniker": "archivsoftware.DataAccess\\Document.cs",
+              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\Document.cs",
+              "RelativeToolTip": "archivsoftware.DataAccess\\Document.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T13:16:10.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "ConnectionTest.cs",
               "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\ConnectionTest.cs",
               "RelativeDocumentMoniker": "archivsoftware.DataAccess\\ConnectionTest.cs",
@@ -98,45 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "archivsoftware\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MainWindow.xaml",
-              "RelativeToolTip": "archivsoftware\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-07T08:03:55.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "archivsoftware\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\MainWindow.xaml.cs",
-              "RelativeToolTip": "archivsoftware\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T08:03:51.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "archivsoftware.DataAccess",
-              "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj",
-              "RelativeDocumentMoniker": "archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj",
-              "ToolTip": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj",
-              "RelativeToolTip": "archivsoftware.DataAccess\\archivsoftware.DataAccess.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-21T11:19:30.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\App.xaml.cs",
               "RelativeDocumentMoniker": "archivsoftware\\App.xaml.cs",

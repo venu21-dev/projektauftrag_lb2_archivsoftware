@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "edn2ZUTdPoY=",
+  "dgSpecHash": "H42EOiSIgGk=",
   "success": true,
   "projectFilePath": "C:\\Users\\venu\\OneDrive - gibb Berufsfachschule Bern\\Personal\\HF\\PROG1\\Projekte\\prg-lb2-archivsoftware\\archivsoftware\\archivsoftware\\archivsoftware.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\venu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\venu\\.nuget\\packages\\itext\\9.4.0\\itext.9.4.0.nupkg.sha512",
     "C:\\Users\\venu\\.nuget\\packages\\itext.commons\\9.4.0\\itext.commons.9.4.0.nupkg.sha512",
+    "C:\\Users\\venu\\.nuget\\packages\\itext7\\9.4.0\\itext7.9.4.0.nupkg.sha512",
     "C:\\Users\\venu\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\venu\\.nuget\\packages\\microsoft.bcl.cryptography\\8.0.0\\microsoft.bcl.cryptography.8.0.0.nupkg.sha512",
     "C:\\Users\\venu\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

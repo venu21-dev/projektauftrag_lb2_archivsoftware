@@ -191,6 +191,12 @@
           }
         }
       },
+      "itext7/9.4.0": {
+        "type": "package",
+        "dependencies": {
+          "itext": "9.4.0"
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -2445,7 +2451,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "archivsoftware.DataAccess": "1.0.0"
+          "DocumentFormat.OpenXml": "3.3.0",
+          "archivsoftware.DataAccess": "1.0.0",
+          "itext7": "9.4.0"
         },
         "compile": {
           "bin/placeholder/archivsoftware.Business.dll": {}
@@ -2655,6 +2663,20 @@
         "lib/net461/itext.commons.xml",
         "lib/netstandard2.0/itext.commons.dll",
         "lib/netstandard2.0/itext.commons.xml"
+      ]
+    },
+    "itext7/9.4.0": {
+      "sha512": "G2pFGO+WTXZZy9hx/lrhpuBX8OQZtyboUqb+5169RtnK6ChX9hkvFwLKrDvwgL/H5Hz6A0QiXycQU6opz1WdfQ==",
+      "type": "package",
+      "path": "itext7/9.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itext7.9.4.0.nupkg.sha512",
+        "itext7.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
@@ -7292,8 +7314,7 @@
       "Microsoft.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
-      "archivsoftware.Business >= 1.0.0",
-      "itext >= 9.4.0"
+      "archivsoftware.Business >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7371,10 +7392,6 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.0, )"
-          },
-          "itext": {
-            "target": "Package",
-            "version": "[9.4.0, )"
           }
         },
         "imports": [

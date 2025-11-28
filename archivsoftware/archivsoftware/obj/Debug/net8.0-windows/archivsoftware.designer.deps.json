@@ -140,6 +140,11 @@
           }
         }
       },
+      "itext7/9.4.0": {
+        "dependencies": {
+          "itext": "9.4.0"
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -1862,6 +1867,13 @@
       "sha512": "sha512-h/5s1eKtCr6BIHL38bYSr82qrdts2R/RI6r/V+yWpQR1wXjzwjWkAe8WtHgBcY4t97xj1+T3j5PXfzCiBdAuUg==",
       "path": "itext.commons/9.4.0",
       "hashPath": "itext.commons.9.4.0.nupkg.sha512"
+    },
+    "itext7/9.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G2pFGO+WTXZZy9hx/lrhpuBX8OQZtyboUqb+5169RtnK6ChX9hkvFwLKrDvwgL/H5Hz6A0QiXycQU6opz1WdfQ==",
+      "path": "itext7/9.4.0",
+      "hashPath": "itext7.9.4.0.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
       "type": "package",

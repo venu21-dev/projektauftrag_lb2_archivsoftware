@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\App.xaml
-11407045341
+4-305926115
 
-6478075658
+101178803626
 247-1557979505
-MainWindow.xaml;
+CreateFolderDialog.xaml;MainWindow.xaml;MoveFolderDialog.xaml;RenameFolderDialog.xaml;
 
-False
+True
 
