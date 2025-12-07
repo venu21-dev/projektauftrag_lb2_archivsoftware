@@ -60,7 +60,7 @@ namespace archivsoftware {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/archivsoftware;component/renamefolderdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/archivsoftware;V1.0.0.0;component/renamefolderdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\RenameFolderDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -169,3 +169,9 @@ C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\p
 C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\RenameFolderDialog.g.cs
 C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\MoveFolderDialog.baml
 C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\MoveFolderDialog.g.cs
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\archivsoftware.csproj.ResolveComReference.cache
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\WatcherSettingsDialog.baml
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\WatcherSettingsDialog.g.cs
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\MoveDocumentDialog.baml
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\MoveDocumentDialog.g.cs
+C:\Users\venu\OneDrive - gibb Berufsfachschule Bern\Personal\HF\PROG1\Projekte\prg-lb2-archivsoftware\archivsoftware\archivsoftware\obj\Debug\net8.0-windows\RenameDocumentDialog.g.cs

@@ -60,7 +60,7 @@ namespace archivsoftware {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/archivsoftware;component/movefolderdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/archivsoftware;V1.0.0.0;component/movefolderdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MoveFolderDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

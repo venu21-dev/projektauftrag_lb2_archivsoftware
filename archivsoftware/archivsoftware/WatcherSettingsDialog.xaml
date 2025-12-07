@@ -1,0 +1,207 @@
+﻿<Window x:Class="archivsoftware.WatcherSettingsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Auto-Import Einstellungen" 
+        Height="400" 
+        Width="500"
+        WindowStartupLocation="CenterOwner"
+        Background="#1A1A1A"
+        ResizeMode="NoResize">
+    
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Titel -->
+        <TextBlock Grid.Row="0"
+                   Text="Automatischer Dokument-Import"
+                   Foreground="#E0E0E0"
+                   FontSize="16"
+                   FontWeight="SemiBold"
+                   Margin="0,0,0,20"/>
+
+        <!-- Überwachungs-Ordner -->
+        <StackPanel Grid.Row="1" Margin="0,0,0,15">
+            <TextBlock Text="Überwachungs-Ordner:"
+                       Foreground="#A0A0A0"
+                       FontSize="13"
+                       Margin="0,0,0,8"/>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <Border Grid.Column="0"
+                        Background="#0D0D0D"
+                        BorderBrush="#404040"
+                        BorderThickness="1"
+                        CornerRadius="6,0,0,6"
+                        Padding="12">
+                    <TextBox x:Name="WatchPathTextBox"
+                             Background="Transparent"
+                             Foreground="#E0E0E0"
+                             BorderThickness="0"
+                             FontSize="13"
+                             VerticalContentAlignment="Center"
+                             IsReadOnly="True"/>
+                </Border>
+                
+                <Button Grid.Column="1"
+                        Content="📁 Durchsuchen"
+                        Height="40"
+                        Width="120"
+                        Background="#0D0D0D"
+                        Foreground="#E0E0E0"
+                        BorderBrush="#404040"
+                        BorderThickness="1,1,1,1"
+                        Padding="10,0"
+                        FontSize="13"
+                        Click="BrowseButton_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="0,6,6,0">
+                                            <ContentPresenter HorizontalAlignment="Center" 
+                                                            VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#1A1A1A"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
+        </StackPanel>
+
+        <!-- Ziel-Ordner Auswahl -->
+        <StackPanel Grid.Row="2" Margin="0,0,0,15">
+            <TextBlock Text="Importieren in Ordner:"
+                       Foreground="#A0A0A0"
+                       FontSize="13"
+                       Margin="0,0,0,8"/>
+            
+            <ComboBox x:Name="TargetFolderComboBox"
+                      Height="40"
+                      Background="#0D0D0D"
+                      Foreground="#E0E0E0"
+                      BorderBrush="#404040"
+                      BorderThickness="1"
+                      FontSize="13"
+                      Padding="12,0"/>
+        </StackPanel>
+
+        <!-- Nach-Import-Aktion -->
+        <StackPanel Grid.Row="3" Margin="0,0,0,15">
+            <TextBlock Text="Nach erfolgreichem Import:"
+                       Foreground="#A0A0A0"
+                       FontSize="13"
+                       Margin="0,0,0,8"/>
+            
+            <ComboBox x:Name="AfterImportComboBox"
+                      Height="40"
+                      Background="#0D0D0D"
+                      Foreground="#E0E0E0"
+                      BorderBrush="#404040"
+                      BorderThickness="1"
+                      FontSize="13"
+                      Padding="12,0"
+                      SelectedIndex="0">
+                <ComboBoxItem Content="Datei löschen"/>
+                <ComboBoxItem Content="Nach 'Imported' verschieben"/>
+                <ComboBoxItem Content="Im Ordner belassen"/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="5"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,20,0,0">
+            
+            <!-- Abbrechen Button -->
+            <Button Content="Abbrechen"
+                    Width="100"
+                    Height="35"
+                    Background="#0D0D0D"
+                    Foreground="#E0E0E0"
+                    BorderBrush="#404040"
+                    BorderThickness="1"
+                    Margin="0,0,10,0"
+                    Click="CancelButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="6">
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                        VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1A1A1A"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <!-- Speichern Button -->
+            <Button Content="Speichern"
+                    Width="100"
+                    Height="35"
+                    Background="#0D6EFD"
+                    Foreground="#FFFFFF"
+                    BorderBrush="#0D6EFD"
+                    BorderThickness="1"
+                    Click="SaveButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="6">
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                        VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0B5ED7"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

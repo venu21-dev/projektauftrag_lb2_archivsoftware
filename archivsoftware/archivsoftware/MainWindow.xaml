@@ -15,12 +15,50 @@
             <!-- Main Content Area -->
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <!-- ========== WATCHER-BUTTON (neben Test-Buttons) ========== -->
+        <Button x:Name="WatcherButton"
+        Content="Auto-imp: AUS"
+        Height="42"
+        Width="79"
+        Background="#DC3545"
+        Foreground="#FFFFFF"
+        BorderBrush="#DC3545"
+        BorderThickness="1"
+        Click="WatcherButton_Click"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Margin="191,10,0,0"
+        Grid.Row="0"
+        Panel.ZIndex="999">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                                    <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.9"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        
         <!-- ========== TEST-BUTTON (temporär, oben links) ========== -->
         <Button x:Name="TestPdfButton"
                 Content="🧪 PDF Test"
                 Height="42"
-                Width="120"
+                Width="77"
                 Background="#0D6EFD"
                 Foreground="#FFFFFF"
                 BorderBrush="#0D6EFD"
@@ -30,7 +68,6 @@
                 VerticalAlignment="Top"
                 Margin="10,10,0,0"
                 Grid.Row="0"
-                Grid.RowSpan="2"
                 Panel.ZIndex="999">
             <Button.Style>
                 <Style TargetType="Button">
@@ -60,7 +97,7 @@
         <Button x:Name="TestDocxButton"
         Content="📄 DOCX Test"
         Height="42"
-        Width="130"
+        Width="94"
         Background="#28A745"
         Foreground="#FFFFFF"
         BorderBrush="#28A745"
@@ -68,9 +105,8 @@
         Click="TestDocxButton_Click"
         HorizontalAlignment="Left"
         VerticalAlignment="Top"
-        Margin="140,10,0,0"
+        Margin="92,10,0,0"
         Grid.Row="0"
-        Grid.RowSpan="2"
         Panel.ZIndex="999">
             <Button.Style>
                 <Style TargetType="Button">

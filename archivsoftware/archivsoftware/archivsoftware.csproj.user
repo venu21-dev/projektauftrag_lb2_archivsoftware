@@ -5,10 +5,19 @@
     <Compile Update="CreateFolderDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MoveDocumentDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MoveFolderDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="RenameDocumentDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="RenameFolderDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WatcherSettingsDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

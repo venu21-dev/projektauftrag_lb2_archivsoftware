@@ -7,6 +7,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using archivsoftware.Business.Models;
+using archivsoftware.Business.Services;
 using archivsoftware.DataAccess;
 using archivsoftware.DataAccess.Repositories;
 using archivsoftware.ViewModels;
@@ -14,6 +16,7 @@ using archivsoftware.ViewModels;
 
 namespace archivsoftware
 {
+
     public partial class MainWindow : Window
     {
         // Repositories
@@ -23,6 +26,10 @@ namespace archivsoftware
 
         // Folder Data für TreeView
         private ObservableCollection<FolderViewModel> _folderTree;
+
+        // FileSystemWatcher Service
+        private DocumentWatcherService _watcherService;
+        private WatcherSettings _watcherSettings;
 
         public MainWindow()
         {
@@ -35,6 +42,9 @@ namespace archivsoftware
 
             // Daten laden
             LoadFolderTree();
+
+            // FileSystemWatcher initialisieren
+            InitializeWatcher();
         }
 
         /// <summary>
@@ -97,7 +107,13 @@ namespace archivsoftware
         /// </summary>
         protected override void OnClosed(EventArgs e)
         {
+            // Watcher stoppen
+            _watcherService?.Stop();
+            _watcherService?.Dispose();
+
+            // Context aufräumen
             _context?.Dispose();
+
             base.OnClosed(e);
         }
 
@@ -665,8 +681,6 @@ namespace archivsoftware
                         errorCount > 0 ? MessageBoxImage.Warning : MessageBoxImage.Information
                     );
 
-                    // GUI aktualisieren (später für Dokumenten-Anzeige)
-                    // TODO: Dokumenten-Liste aktualisieren
                     // GUI aktualisieren - Dokumente neu laden
                     if (_selectedFolder != null)
                     {
@@ -778,7 +792,7 @@ namespace archivsoftware
         }
 
         /// <summary>
-        /// Lädt und zeigt die Dokumente eines Ordners an
+        /// Lädt und zeigt die Dokumente eines Ordners an - MIT KONTEXTMENÜ
         /// </summary>
         private void LoadDocuments(int folderId)
         {
@@ -823,7 +837,7 @@ namespace archivsoftware
         }
 
         /// <summary>
-        /// Erstellt eine Card für ein Dokument
+        /// Erstellt eine Card für ein Dokument - MIT KONTEXTMENÜ
         /// </summary>
         private Border CreateDocumentCard(Document document)
         {
@@ -836,8 +850,12 @@ namespace archivsoftware
                 CornerRadius = new CornerRadius(8),
                 Padding = new Thickness(16),
                 Margin = new Thickness(10, 5, 10, 5),
-                Cursor = Cursors.Hand
+                Cursor = Cursors.Hand,
+                Tag = document  // ← WICHTIG: Dokument speichern für Kontextmenü!
             };
+
+            // ← NEU: Kontextmenü zuweisen!
+            card.ContextMenu = (ContextMenu)this.FindResource("DocumentContextMenu");
 
             // Layout
             var grid = new Grid();
@@ -1001,6 +1019,323 @@ namespace archivsoftware
             stack.Children.Add(labelText);
             stack.Children.Add(valueText);
             MetadataPanel.Children.Add(stack);
+        }
+
+        /// <summary>
+        /// Initialisiert den FileSystemWatcher
+        /// </summary>
+        private void InitializeWatcher()
+        {
+            _watcherService = new archivsoftware.Business.Services.DocumentWatcherService();
+
+            // Events abonnieren
+            _watcherService.DocumentImported += WatcherService_DocumentImported;
+            _watcherService.ImportError += WatcherService_ImportError;
+
+            // Einstellungen laden (später aus Datei/DB)
+            _watcherSettings = new archivsoftware.Business.Models.WatcherSettings
+            {
+                IsEnabled = false, // Erstmal deaktiviert
+                WatchPath = @"C:\ArchivImport", // Standard-Pfad
+                TargetFolderId = 0, // Muss später gesetzt werden
+                AfterImport = archivsoftware.Business.Models.ImportAction.Delete
+            };
+        }
+
+        /// <summary>
+        /// Event: Dokument wurde vom Watcher erkannt
+        /// </summary>
+        private void WatcherService_DocumentImported(object sender, DocumentImportedEventArgs e)
+        {
+            // Muss auf UI-Thread ausgeführt werden
+            Dispatcher.Invoke(() =>
+            {
+                try
+                {
+                    // Dokument importieren
+                    ImportDocument(e.FilePath, e.TargetFolderId);
+
+                    // Nach-Import-Aktion
+                    HandleAfterImport(e.FilePath, e.AfterImport);
+
+                    // GUI aktualisieren
+                    if (_selectedFolder?.Id == e.TargetFolderId)
+                    {
+                        LoadDocuments(e.TargetFolderId);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        $"Fehler beim automatischen Import:\n{Path.GetFileName(e.FilePath)}\n\n{ex.Message}",
+                        "Import-Fehler",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error
+                    );
+                }
+            });
+        }
+
+        /// <summary>
+        /// Event: Import-Fehler vom Watcher
+        /// </summary>
+        private void WatcherService_ImportError(object sender, ImportErrorEventArgs e)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show(
+                    $"Fehler beim Überwachen:\n{e.FilePath}\n\n{e.ErrorMessage}",
+                    "Watcher-Fehler",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+            });
+        }
+
+        /// <summary>
+        /// Behandelt Datei nach erfolgreichem Import
+        /// </summary>
+        private void HandleAfterImport(string filePath, archivsoftware.Business.Models.ImportAction action)
+        {
+            try
+            {
+                switch (action)
+                {
+                    case archivsoftware.Business.Models.ImportAction.Delete:
+                        File.Delete(filePath);
+                        break;
+
+                    case archivsoftware.Business.Models.ImportAction.MoveToImported:
+                        string importedFolder = Path.Combine(Path.GetDirectoryName(filePath), "Imported");
+                        Directory.CreateDirectory(importedFolder);
+                        string newPath = Path.Combine(importedFolder, Path.GetFileName(filePath));
+                        File.Move(filePath, newPath);
+                        break;
+
+                    case archivsoftware.Business.Models.ImportAction.KeepInPlace:
+                        // Nichts tun
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Fehler beim Verarbeiten der Datei nach Import:\n{ex.Message}",
+                    "Fehler",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+            }
+        }
+
+        /// <summary>
+        /// Button: Watcher Ein/Aus
+        /// </summary>
+        private void WatcherButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (_watcherService.IsRunning)
+                {
+                    // Watcher stoppen
+                    _watcherService.Stop();
+
+                    // Button-Text & Farbe ändern
+                    WatcherButton.Content = "Auto-Imp: AUS";
+                    WatcherButton.Background = new SolidColorBrush(Color.FromRgb(220, 53, 69)); // Rot
+                    WatcherButton.BorderBrush = new SolidColorBrush(Color.FromRgb(220, 53, 69));
+
+                    MessageBox.Show("Auto-Import wurde gestoppt.",
+                        "Watcher gestoppt",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+                else
+                {
+                    // Einstellungs-Dialog öffnen
+                    var dialog = new WatcherSettingsDialog(_watcherSettings, _context);
+                    dialog.Owner = this;
+
+                    if (dialog.ShowDialog() == true)
+                    {
+                        // Einstellungen übernehmen
+                        _watcherSettings = dialog.Settings;
+
+                        // Ordner erstellen falls nicht vorhanden
+                        if (!Directory.Exists(_watcherSettings.WatchPath))
+                        {
+                            Directory.CreateDirectory(_watcherSettings.WatchPath);
+                        }
+
+                        // Watcher starten
+                        _watcherService.Start(_watcherSettings);
+
+                        // Button-Text & Farbe ändern
+                        WatcherButton.Content = "Auto-Imp: AN";
+                        WatcherButton.Background = new SolidColorBrush(Color.FromRgb(40, 167, 69)); // Grün
+                        WatcherButton.BorderBrush = new SolidColorBrush(Color.FromRgb(40, 167, 69));
+
+                        var folderName = _folderRepository.GetById(_watcherSettings.TargetFolderId).Name;
+
+                        MessageBox.Show(
+                            $"Auto-Import wurde gestartet!\n\n" +
+                            $"📁 Überwacht: {_watcherSettings.WatchPath}\n" +
+                            $"📂 Importiert nach: {folderName}\n\n" +
+                            $"Legen Sie PDF oder DOCX Dateien in den überwachten Ordner,\n" +
+                            $"sie werden automatisch importiert!",
+                            "Watcher gestartet",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Information
+                        );
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Fehler beim Steuern des Watchers:\n\n{ex.Message}",
+                    "Fehler",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                );
+            }
+        }
+
+        // ========== DOKUMENT VERWALTEN: KONTEXTMENÜ-HANDLER ========== 
+
+        /// <summary>
+        /// Kontextmenü: Dokument umbenennen
+        /// </summary>
+        private void RenameDocument_Click(object sender, RoutedEventArgs e)
+        {
+            // Welches Dokument wurde rechts-geklickt?
+            var menuItem = sender as MenuItem;
+            var contextMenu = menuItem?.Parent as ContextMenu;
+            var card = contextMenu?.PlacementTarget as Border;
+            var document = card?.Tag as Document;
+
+            if (document == null)
+            {
+                MessageBox.Show("Kein Dokument ausgewählt.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Dialog öffnen
+            var dialog = new RenameDocumentDialog(document, _context);
+            dialog.Owner = this;
+
+            if (dialog.ShowDialog() == true)
+            {
+                // Dokument in DB umbenennen
+                document.FileName = dialog.NewFileName;
+                _context.SaveChanges();
+
+                // GUI aktualisieren
+                if (_selectedFolder != null)
+                {
+                    LoadDocuments(_selectedFolder.Id);
+                }
+
+                MessageBox.Show(
+                    $"Dokument wurde erfolgreich umbenannt zu:\n{dialog.NewFileName}",
+                    "Erfolgreich",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information
+                );
+            }
+        }
+
+        /// <summary>
+        /// Kontextmenü: Dokument verschieben
+        /// </summary>
+        private void MoveDocument_Click(object sender, RoutedEventArgs e)
+        {
+            // Welches Dokument wurde rechts-geklickt?
+            var menuItem = sender as MenuItem;
+            var contextMenu = menuItem?.Parent as ContextMenu;
+            var card = contextMenu?.PlacementTarget as Border;
+            var document = card?.Tag as Document;
+
+            if (document == null)
+            {
+                MessageBox.Show("Kein Dokument ausgewählt.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Dialog öffnen
+            var dialog = new MoveDocumentDialog(document, _context);
+            dialog.Owner = this;
+
+            if (dialog.ShowDialog() == true)
+            {
+                // Dokument in DB verschieben
+                var targetFolder = _context.Folders.FirstOrDefault(f => f.FolderId == dialog.TargetFolderId);
+                document.FolderId = dialog.TargetFolderId;
+                _context.SaveChanges();
+
+                // GUI aktualisieren
+                if (_selectedFolder != null)
+                {
+                    LoadDocuments(_selectedFolder.Id);
+                }
+
+                MessageBox.Show(
+                    $"Dokument wurde erfolgreich verschoben nach:\n{targetFolder?.FolderName}",
+                    "Erfolgreich",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information
+                );
+            }
+        }
+
+        /// <summary>
+        /// Kontextmenü: Dokument löschen
+        /// </summary>
+        private void DeleteDocument_Click(object sender, RoutedEventArgs e)
+        {
+            // Welches Dokument wurde rechts-geklickt?
+            var menuItem = sender as MenuItem;
+            var contextMenu = menuItem?.Parent as ContextMenu;
+            var card = contextMenu?.PlacementTarget as Border;
+            var document = card?.Tag as Document;
+
+            if (document == null)
+            {
+                MessageBox.Show("Kein Dokument ausgewählt.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Bestätigung
+            MessageBoxResult result = MessageBox.Show(
+                $"Möchten Sie das Dokument '{document.FileName}' wirklich löschen?\n\nDiese Aktion kann nicht rückgängig gemacht werden.",
+                "Dokument löschen",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning
+            );
+
+            if (result == MessageBoxResult.Yes)
+            {
+                // Aus DB löschen
+                _context.Documents.Remove(document);
+                _context.SaveChanges();
+
+                // GUI aktualisieren
+                if (_selectedFolder != null)
+                {
+                    LoadDocuments(_selectedFolder.Id);
+                }
+
+                // Vorschau leeren
+                MetadataPanel.Children.Clear();
+                PreviewText.Text = "";
+
+                MessageBox.Show(
+                    "Dokument wurde erfolgreich gelöscht.",
+                    "Erfolgreich",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information
+                );
+            }
         }
     }
 }
