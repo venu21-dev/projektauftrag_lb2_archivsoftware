@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Controls;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Linq;
 using archivsoftware.DataAccess;
+
 
 namespace archivsoftware
 {
@@ -34,8 +35,8 @@ namespace archivsoftware
             DocumentNameText.Text = document.FileName;
 
             // Aktuellen Ordner anzeigen
-            var currentFolder = _context.Folders.FirstOrDefault(f => f.FolderId == document.FolderId);
-            CurrentFolderText.Text = currentFolder?.FolderName ?? "Unbekannt";
+            var currentFolder = _context.Folders.FirstOrDefault(f => f.Id == document.FolderId);
+            CurrentFolderText.Text = currentFolder?.Name ?? "Unbekannt";
 
             // Alle Ordner laden (außer aktuellem)
             LoadFolders();
@@ -45,16 +46,16 @@ namespace archivsoftware
         {
             // Alle Ordner aus DB holen
             var allFolders = _context.Folders
-                .OrderBy(f => f.FolderName)
+                .OrderBy(f => f.Name)
                 .ToList();
 
             // Helper-Klasse für ComboBox Items
             var folderItems = allFolders
-                .Where(f => f.FolderId != _document.FolderId) // Aktuellen Ordner ausschließen
+                .Where(f => f.Id != _document.FolderId) // Aktuellen Ordner ausschließen
                 .Select(f => new FolderComboBoxItem
                 {
-                    FolderId = f.FolderId,
-                    FolderName = GetFolderPath(f.FolderId, allFolders)
+                    FolderId = f.Id,
+                    FolderName = GetFolderPath(f.Id, allFolders)
                 })
                 .OrderBy(f => f.FolderName)
                 .ToList();
@@ -70,17 +71,17 @@ namespace archivsoftware
 
         private string GetFolderPath(int folderId, List<Folder> allFolders)
         {
-            var folder = allFolders.FirstOrDefault(f => f.FolderId == folderId);
+            var folder = allFolders.FirstOrDefault(f => f.Id == folderId);
             if (folder == null) return "";
 
             // Hierarchischen Pfad aufbauen
-            var pathParts = new System.Collections.Generic.List<string>();
+            var pathParts = new List<string>();
             var current = folder;
 
             while (current != null)
             {
-                pathParts.Insert(0, current.FolderName);
-                current = allFolders.FirstOrDefault(f => f.FolderId == current.ParentFolderId);
+                pathParts.Insert(0, current.Name);
+                current = allFolders.FirstOrDefault(f => f.Id == current.ParentFolderId);
             }
 
             return string.Join(" / ", pathParts);
@@ -107,7 +108,7 @@ namespace archivsoftware
             bool isDuplicate = _context.Documents.Any(d =>
                 d.FolderId == TargetFolderId &&
                 d.FileName == _document.FileName &&
-                d.DocumentId != _document.DocumentId
+                d.Id != _document.Id  // ← Id statt DocumentId!
             );
 
             if (isDuplicate)

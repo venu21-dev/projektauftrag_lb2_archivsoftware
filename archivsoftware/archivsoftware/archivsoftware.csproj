@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\PDF_icon.png" />
+    <None Remove="Images\word_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <COMReference Include="{215d64d2-031c-33c7-96e3-61794cd1ee61}">
       <WrapperTool>tlbimp</WrapperTool>
       <VersionMinor>4</VersionMinor>
@@ -30,6 +35,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\archivsoftware.Business\archivsoftware.Business.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\PDF_icon.png" />
+    <Resource Include="Images\word_icon.png" />
   </ItemGroup>
 
 </Project>

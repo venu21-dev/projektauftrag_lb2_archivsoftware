@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using archivsoftware.Business.Models;
 using archivsoftware.Business.Services;
 using archivsoftware.DataAccess;
@@ -48,13 +49,245 @@ namespace archivsoftware
         }
 
         /// <summary>
-        /// Such-Placeholder ausblenden/einblenden
+        /// Such-Placeholder ausblenden/einblenden + Suche triggern
         /// </summary>
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             SearchPlaceholder.Visibility = string.IsNullOrEmpty(SearchBox.Text)
                 ? Visibility.Visible
                 : Visibility.Hidden;
+
+            // Suche triggern
+            string searchTerm = SearchBox.Text?.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                // Suchfeld leer → Ordner-Ansicht wiederherstellen
+                if (_selectedFolder != null)
+                {
+                    LoadDocuments(_selectedFolder.Id);
+                }
+                else
+                {
+                    // Kein Ordner ausgewählt → Liste leeren
+                    ResultsPanel.Children.Clear();
+                    ResultCountText.Text = "0 Dokumente";
+                }
+            }
+            else
+            {
+                // Suche ausführen
+                PerformSearch(searchTerm);
+            }
+        }
+
+        /// <summary>
+        /// Führt Volltextsuche aus und zeigt Ergebnisse an
+        /// </summary>
+        private void PerformSearch(string searchTerm)
+        {
+            try
+            {
+                // Suche in Datenbank
+                var results = _documentRepository.SearchDocuments(searchTerm);
+
+                // ResultsPanel leeren
+                ResultsPanel.Children.Clear();
+
+                // Treffer-Anzahl aktualisieren
+                ResultCountText.Text = $"{results.Count} Treffer";
+
+                if (results.Count == 0)
+                {
+                    // Keine Treffer
+                    var emptyText = new TextBlock
+                    {
+                        Text = $"Keine Dokumente gefunden für '{searchTerm}'",
+                        Foreground = new SolidColorBrush(Color.FromRgb(128, 128, 128)),
+                        FontSize = 14,
+                        Margin = new Thickness(20, 40, 20, 20),
+                        TextAlignment = TextAlignment.Center
+                    };
+                    ResultsPanel.Children.Add(emptyText);
+                    return;
+                }
+
+                // Ergebnisse anzeigen
+                foreach (var document in results)
+                {
+                    var searchResultCard = CreateSearchResultCard(document, searchTerm);
+                    ResultsPanel.Children.Add(searchResultCard);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fehler bei der Suche: {ex.Message}",
+                    "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        /// <summary>
+        /// Erstellt eine Card für ein Suchergebnis (mit Ordner-Pfad)
+        /// </summary>
+        private Border CreateSearchResultCard(Document document, string searchTerm)
+        {
+            // Ordner-Pfad ermitteln
+            string folderPath = GetFolderPath(document.FolderId);
+
+            // Haupt-Container
+            var card = new Border
+            {
+                Background = new SolidColorBrush(Color.FromRgb(26, 26, 26)),
+                BorderBrush = new SolidColorBrush(Color.FromRgb(42, 42, 42)),
+                BorderThickness = new Thickness(1),
+                CornerRadius = new CornerRadius(8),
+                Padding = new Thickness(16),
+                Margin = new Thickness(10, 5, 10, 5),
+                Cursor = Cursors.Hand,
+                Tag = document
+            };
+
+            // Kontextmenü zuweisen
+            card.ContextMenu = (ContextMenu)this.FindResource("DocumentContextMenu");
+
+            // Layout
+            var mainStack = new StackPanel();
+
+            // Erste Zeile: Icon + Name + Badge
+            var topGrid = new Grid();
+            topGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
+            topGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            topGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
+
+            // Icon
+            // Icon (basierend auf Dateityp) - MIT BILDERN!
+            var iconImage = new Image
+            {
+                Width = 32,
+                Height = 32,
+                VerticalAlignment = VerticalAlignment.Center,
+                Margin = new Thickness(0, 0, 12, 0)
+            };
+
+            // Bild-Pfad setzen
+            string imagePath = document.FileType.ToLower() == ".pdf"
+                ? "pack://application:,,,/Images/PDF_icon.png"
+                : "pack://application:,,,/Images/word_icon.png";
+
+            iconImage.Source = new BitmapImage(new Uri(imagePath));
+
+            Grid.SetColumn(iconImage, 0);
+
+            // Dateiname
+            var nameText = new TextBlock
+            {
+                Text = document.FileName,
+                Foreground = new SolidColorBrush(Color.FromRgb(232, 232, 232)),
+                FontSize = 14,
+                FontWeight = FontWeights.Normal,
+                VerticalAlignment = VerticalAlignment.Center
+            };
+            Grid.SetColumn(nameText, 1);
+
+            // Badge: Dateityp
+            var badge = new Border
+            {
+                Background = new SolidColorBrush(Color.FromRgb(13, 110, 253)),
+                CornerRadius = new CornerRadius(4),
+                Padding = new Thickness(8, 4, 8, 4),
+                VerticalAlignment = VerticalAlignment.Center
+            };
+            var badgeText = new TextBlock
+            {
+                Text = document.FileType.ToUpper().Replace(".", ""),
+                Foreground = Brushes.White,
+                FontSize = 11,
+                FontWeight = FontWeights.SemiBold
+            };
+            badge.Child = badgeText;
+            Grid.SetColumn(badge, 2);
+
+            topGrid.Children.Add(iconImage);
+            topGrid.Children.Add(nameText);
+            topGrid.Children.Add(badge);
+            mainStack.Children.Add(topGrid);
+
+            // Zweite Zeile: Ordner-Pfad
+            var folderStack = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                Margin = new Thickness(36, 6, 0, 0)
+            };
+
+            var folderIcon = new TextBlock
+            {
+                Text = "📁",
+                FontSize = 12,
+                Margin = new Thickness(0, 0, 6, 0),
+                Foreground = new SolidColorBrush(Color.FromRgb(255, 165, 0))
+            };
+
+            var folderText = new TextBlock
+            {
+                Text = folderPath,
+                Foreground = new SolidColorBrush(Color.FromRgb(160, 160, 160)),
+                FontSize = 12
+            };
+
+            folderStack.Children.Add(folderIcon);
+            folderStack.Children.Add(folderText);
+            mainStack.Children.Add(folderStack);
+
+            // Dritte Zeile: Metadaten
+            string fileSize = FormatFileSize(document.FileSize);
+            string importDate = document.ImportedAt.ToString("dd.MM.yyyy HH:mm");
+
+            var metaText = new TextBlock
+            {
+                Text = $"{fileSize} • {importDate}",
+                Foreground = new SolidColorBrush(Color.FromRgb(128, 128, 128)),
+                FontSize = 12,
+                Margin = new Thickness(36, 4, 0, 0)
+            };
+            mainStack.Children.Add(metaText);
+
+            card.Child = mainStack;
+
+            // Click-Event: Dokument anzeigen
+            card.MouseLeftButtonDown += (s, e) => ShowDocumentPreview(document);
+
+            // Hover-Effekt
+            card.MouseEnter += (s, e) =>
+            {
+                card.Background = new SolidColorBrush(Color.FromRgb(36, 36, 36));
+                card.BorderBrush = new SolidColorBrush(Color.FromRgb(58, 58, 58));
+            };
+            card.MouseLeave += (s, e) =>
+            {
+                card.Background = new SolidColorBrush(Color.FromRgb(26, 26, 26));
+                card.BorderBrush = new SolidColorBrush(Color.FromRgb(42, 42, 42));
+            };
+
+            return card;
+        }
+
+        /// <summary>
+        /// Ermittelt den hierarchischen Ordner-Pfad für ein Dokument
+        /// </summary>
+        private string GetFolderPath(int folderId)
+        {
+            var pathParts = new System.Collections.Generic.List<string>();
+            var allFolders = _folderRepository.GetAll();
+
+            var currentFolder = allFolders.FirstOrDefault(f => f.Id == folderId);
+
+            while (currentFolder != null)
+            {
+                pathParts.Insert(0, currentFolder.Name);
+                currentFolder = allFolders.FirstOrDefault(f => f.Id == currentFolder.ParentFolderId);
+            }
+
+            return pathParts.Count > 0 ? string.Join(" / ", pathParts) : "Unbekannt";
         }
 
         /// <summary>
@@ -864,15 +1097,24 @@ namespace archivsoftware
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
 
             // Icon (basierend auf Dateityp)
-            string icon = document.FileType.ToLower() == ".pdf" ? "📄" : "📝";
-            var iconText = new TextBlock
+            // Icon (basierend auf Dateityp) - MIT BILDERN!
+            var iconImage = new Image
             {
-                Text = icon,
-                FontSize = 24,
+                Width = 32,
+                Height = 32,
                 VerticalAlignment = VerticalAlignment.Center,
                 Margin = new Thickness(0, 0, 12, 0)
             };
-            Grid.SetColumn(iconText, 0);
+
+            // Bild-Pfad setzen
+            string imagePath = document.FileType.ToLower() == ".pdf"
+            ? "pack://application:,,,/Images/PDF_icon.png"
+            : "pack://application:,,,/Images/word_icon.png";
+
+            iconImage.Source = new BitmapImage(new Uri(imagePath));
+
+
+            Grid.SetColumn(iconImage, 0);
 
             // Dokumenten-Info
             var infoStack = new StackPanel
@@ -925,7 +1167,7 @@ namespace archivsoftware
             Grid.SetColumn(badge, 2);
 
             // Alles zusammenfügen
-            grid.Children.Add(iconText);
+            grid.Children.Add(iconImage);
             grid.Children.Add(infoStack);
             grid.Children.Add(badge);
             card.Child = grid;
@@ -1141,9 +1383,8 @@ namespace archivsoftware
                     _watcherService.Stop();
 
                     // Button-Text & Farbe ändern
-                    WatcherButton.Content = "Auto-Imp: AUS";
-                    WatcherButton.Background = new SolidColorBrush(Color.FromRgb(220, 53, 69)); // Rot
-                    WatcherButton.BorderBrush = new SolidColorBrush(Color.FromRgb(220, 53, 69));
+                    // Button-Text ändern (Farbe bleibt gleich!)
+                    WatcherButton.Content = "Auto-Import: AUS";
 
                     MessageBox.Show("Auto-Import wurde gestoppt.",
                         "Watcher gestoppt",
@@ -1171,9 +1412,8 @@ namespace archivsoftware
                         _watcherService.Start(_watcherSettings);
 
                         // Button-Text & Farbe ändern
-                        WatcherButton.Content = "Auto-Imp: AN";
-                        WatcherButton.Background = new SolidColorBrush(Color.FromRgb(40, 167, 69)); // Grün
-                        WatcherButton.BorderBrush = new SolidColorBrush(Color.FromRgb(40, 167, 69));
+                        WatcherButton.Content = "Auto-Import: AN";
+
 
                         var folderName = _folderRepository.GetById(_watcherSettings.TargetFolderId).Name;
 
@@ -1269,7 +1509,7 @@ namespace archivsoftware
             if (dialog.ShowDialog() == true)
             {
                 // Dokument in DB verschieben
-                var targetFolder = _context.Folders.FirstOrDefault(f => f.FolderId == dialog.TargetFolderId);
+                var targetFolder = _context.Folders.FirstOrDefault(f => f.Id == dialog.TargetFolderId);  // ← HIER: Id statt FolderId!
                 document.FolderId = dialog.TargetFolderId;
                 _context.SaveChanges();
 
@@ -1280,7 +1520,7 @@ namespace archivsoftware
                 }
 
                 MessageBox.Show(
-                    $"Dokument wurde erfolgreich verschoben nach:\n{targetFolder?.FolderName}",
+                    $"Dokument wurde erfolgreich verschoben nach:\n{targetFolder?.Name}",
                     "Erfolgreich",
                     MessageBoxButton.OK,
                     MessageBoxImage.Information

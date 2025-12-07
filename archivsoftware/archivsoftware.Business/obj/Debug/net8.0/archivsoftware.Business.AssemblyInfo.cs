@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("archivsoftware.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72f7ea9cc00c34a3b2f736b699b11b88e27daf54")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb0389658fc050db7f625e78dfb45591205ed9af")]
 [assembly: System.Reflection.AssemblyProductAttribute("archivsoftware.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("archivsoftware.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

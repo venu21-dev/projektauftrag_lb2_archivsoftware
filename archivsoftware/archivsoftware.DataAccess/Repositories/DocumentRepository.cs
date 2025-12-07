@@ -80,5 +80,24 @@ namespace archivsoftware.DataAccess.Repositories
                            d.FileName.Contains(searchTerm))
                 .ToList();
         }
+
+        /// <summary>
+        /// Sucht Dokumente über alle Ordner hinweg (Volltextsuche im PlainText)
+        /// </summary>
+        /// <param name="searchTerm">Suchbegriff</param>
+        /// <returns>Liste gefundener Dokumente</returns>
+        public List<Document> SearchDocuments(string searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return new List<Document>();
+            }
+
+            // SQL LIKE Suche (case-insensitive)
+            return _context.Documents
+                .Where(d => d.PlainText.Contains(searchTerm) || d.FileName.Contains(searchTerm))
+                .OrderByDescending(d => d.ImportedAt)
+                .ToList();
+        }
     }
 }

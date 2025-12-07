@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.IO;
+using System.Linq;
+using System.Windows;
 using archivsoftware.DataAccess;
 
 namespace archivsoftware
@@ -64,7 +54,7 @@ namespace archivsoftware
             bool isDuplicate = _context.Documents.Any(d =>
                 d.FolderId == _document.FolderId &&
                 d.FileName == NewFileName &&
-                d.DocumentId != _document.DocumentId
+                d.Id != _document.Id  // ← Id statt DocumentId!
             );
 
             if (isDuplicate)

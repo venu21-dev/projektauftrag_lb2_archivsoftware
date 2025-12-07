@@ -8,6 +8,95 @@
         Title="Archivsoftware" Height="700" Width="1400"
         Background="#1A1A1A">
 
+    <!-- ========== RESSOURCEN: KONTEXTMENÜ FÜR DOKUMENTE ========== -->
+    <Window.Resources>
+        <ContextMenu x:Key="DocumentContextMenu" 
+                     Background="#2D2D2D" 
+                     BorderBrush="#404040"
+                     BorderThickness="1">
+            <MenuItem Header="📝 Umbenennen" 
+                      Click="RenameDocument_Click"
+                      Foreground="White"
+                      Background="#2D2D2D"
+                      Padding="10,8">
+                <MenuItem.Style>
+                    <Style TargetType="MenuItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="MenuItem">
+                                    <Border x:Name="Border"
+                                            Background="{TemplateBinding Background}"
+                                            Padding="{TemplateBinding Padding}">
+                                        <ContentPresenter ContentSource="Header"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Border" Property="Background" Value="#404040"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </MenuItem.Style>
+            </MenuItem>
+
+            <MenuItem Header="📁 Verschieben" 
+                      Click="MoveDocument_Click"
+                      Foreground="White"
+                      Background="#2D2D2D"
+                      Padding="10,8">
+                <MenuItem.Style>
+                    <Style TargetType="MenuItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="MenuItem">
+                                    <Border x:Name="Border"
+                                            Background="{TemplateBinding Background}"
+                                            Padding="{TemplateBinding Padding}">
+                                        <ContentPresenter ContentSource="Header"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Border" Property="Background" Value="#404040"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </MenuItem.Style>
+            </MenuItem>
+
+            <MenuItem Header="🗑️ Löschen" 
+                      Click="DeleteDocument_Click"
+                      Foreground="#DC3545"
+                      Background="#2D2D2D"
+                      Padding="10,8">
+                <MenuItem.Style>
+                    <Style TargetType="MenuItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="MenuItem">
+                                    <Border x:Name="Border"
+                                            Background="{TemplateBinding Background}"
+                                            Padding="{TemplateBinding Padding}">
+                                        <ContentPresenter ContentSource="Header"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Border" Property="Background" Value="#404040"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </MenuItem.Style>
+            </MenuItem>
+        </ContextMenu>
+    </Window.Resources>
+
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <!-- Top Bar: Suche + Buttons -->
@@ -15,20 +104,21 @@
             <!-- Main Content Area -->
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <!-- ========== WATCHER-BUTTON (neben Test-Buttons) ========== -->
+
+        <!-- ========== WATCHER-BUTTON (wie Import/Neuer Ordner Style) ========== -->
         <Button x:Name="WatcherButton"
-        Content="Auto-imp: AUS"
+        Content="Auto-Import: AUS"
         Height="42"
-        Width="79"
-        Background="#DC3545"
-        Foreground="#FFFFFF"
-        BorderBrush="#DC3545"
+        Background="#0D0D0D"
+        Foreground="#E0E0E0"
+        BorderBrush="#404040"
         BorderThickness="1"
+        Padding="20,0"
+        FontSize="13"
+        Cursor="Hand"
         Click="WatcherButton_Click"
         HorizontalAlignment="Left"
         VerticalAlignment="Top"
-        Margin="191,10,0,0"
-        Grid.Row="0"
         Panel.ZIndex="999">
             <Button.Style>
                 <Style TargetType="Button">
@@ -38,7 +128,8 @@
                                 <Border Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="6">
+                                CornerRadius="6"
+                                Padding="{TemplateBinding Padding}">
                                     <ContentPresenter HorizontalAlignment="Center" 
                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -47,85 +138,7 @@
                     </Setter>
                     <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Opacity" Value="0.9"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-        
-        <!-- ========== TEST-BUTTON (temporär, oben links) ========== -->
-        <Button x:Name="TestPdfButton"
-                Content="🧪 PDF Test"
-                Height="42"
-                Width="77"
-                Background="#0D6EFD"
-                Foreground="#FFFFFF"
-                BorderBrush="#0D6EFD"
-                BorderThickness="1"
-                Click="TestPdfButton_Click"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="10,10,0,0"
-                Grid.Row="0"
-                Panel.ZIndex="999">
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
-                                        CornerRadius="6">
-                                    <ContentPresenter HorizontalAlignment="Center" 
-                                                    VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#0B5ED7"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-
-        <!-- ========== TEST-BUTTON DOCX (temporär, oben links neben PDF) ========== -->
-        <Button x:Name="TestDocxButton"
-        Content="📄 DOCX Test"
-        Height="42"
-        Width="94"
-        Background="#28A745"
-        Foreground="#FFFFFF"
-        BorderBrush="#28A745"
-        BorderThickness="1"
-        Click="TestDocxButton_Click"
-        HorizontalAlignment="Left"
-        VerticalAlignment="Top"
-        Margin="92,10,0,0"
-        Grid.Row="0"
-        Panel.ZIndex="999">
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="6">
-                                    <ContentPresenter HorizontalAlignment="Center" 
-                                            VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#218838"/>
+                            <Setter Property="Background" Value="#1A1A1A"/>
                         </Trigger>
                     </Style.Triggers>
                 </Style>
