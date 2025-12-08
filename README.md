@@ -135,49 +135,6 @@ ArchivsoftwareApp/
 
 ---
 
-## 🗂️ Projektstruktur
-
-```
-ArchivsoftwareApp/
-│
-├── Presentation/
-│   ├── App.xaml
-│   ├── App.xaml.cs
-│   ├── MainWindow.xaml                 # Hauptfenster UI
-│   ├── MainWindow.xaml.cs              # Hauptfenster Code-Behind
-│   ├── ViewModels/
-│   │   ├── MainViewModel.cs            # Haupt-ViewModel
-│   │   ├── FolderViewModel.cs          # Ordner-ViewModel
-│   │   └── DocumentViewModel.cs        # Dokument-ViewModel
-│   └── Converters/
-│       └── BoolToVisibilityConverter.cs
-│
-├── Business/
-│   ├── Services/
-│   │   ├── FolderService.cs            # Ordner-Logik
-│   │   ├── DocumentService.cs          # Dokument-Logik
-│   │   ├── SearchService.cs            # Such-Logik
-│   │   ├── FileWatcherService.cs       # Überwachung
-│   │   └── TextExtractionService.cs    # PDF/DOCX Extraktion
-│   └── Models/
-│       ├── SearchResult.cs             # Suchergebnis-Modell
-│       └── DocumentInfo.cs             # Dokument-Info
-│
-└── DataAccess/
-    ├── Entities/
-    │   ├── Folder.cs                   # Ordner-Entity
-    │   └── Document.cs                 # Dokument-Entity
-    ├── Repositories/
-    │   ├── IFolderRepository.cs        # Ordner-Interface
-    │   ├── FolderRepository.cs         # Ordner-Repository
-    │   ├── IDocumentRepository.cs      # Dokument-Interface
-    │   └── DocumentRepository.cs       # Dokument-Repository
-    ├── AppDbContext.cs                 # EF Core Context
-    └── Migrations/                     # EF Migrations
-```
-
----
-
 ## 🎯 Lernziele (LB2)
 
 Dieses Projekt erfüllt folgende Lernziele:
